@@ -1,16 +1,21 @@
 // Animation Engine Example Skeleton
 // This sketch shows a basic method for running multiple instances of multiple animations all on the same strip without using any mallocs or frees on a microcontroller.
-// I have found many ways to improve upon this concept, but I attempted to keep this sketch simple so that it may serve as a starting point for others and hopefully isn't too overwhelming for those with at least some coding experience.
+// I have found many ways to improve upon this concept, but I attempted to keep this sketch simple so that it may serve as a starting point for others and hopefully 
+// isn't too overwhelming for those with at least some coding experience.
 // To fully understand HOW this sketch works requires some coding knowledge, but if you just want to use it and add your own animations it shouldn't be too bad.
-// The "meat" of this sketch is an array of animation objects. Each animation object has it's own function pointer which points to a function that will actually perform the calculation for the animation and write to the CRGB array.
+// The "meat" of this sketch is an array of animation objects. Each animation object has it's own function pointer which points to a function that will actually
+// perform the calculation for the animation and write to the CRGB array.
 // Every cycle, the controller will iterate through that array and play all the animations inside of it.
-// In order to allow multiple instances of the same animations to play simultaneously without needed to dynamically create new objects during runtime, the variables each animation uses are stored in a seperate array.
+// In order to allow multiple instances of the same animations to play simultaneously without needing to dynamically create new objects during runtime, the variables 
+// each animation uses are stored in a seperate array.
 // Each animation function takes a single integer as an input parameter.
 // This input parameter tells the animation where it's variables are stored as well as where it is located in the animation array.
 // I have included example animations written at the end of this sketch. Some of these animations use "Advanced techniques" such as automatically creating and deleting animations
-// To add your own animations, write the animation function in the same manner as the examples at the bottom of the sketch and declare a new animation object containing the name of the animation, the corresponding function, the variable names, and how many variables are needed
-// I may continue to add more to this if it gains enough interest
-// Future improvements I could add include: Accompanying bluetooth Android app, Audio Sampling and FFT for music reactive animations, Support for color palletes, Animation variable memory management improvements, Unique loading techniques for different animations
+// To add your own animations, write the animation function in the same manner as the examples at the bottom of the sketch and declare a new animation object containing 
+// the name of the animation, the corresponding function, the variable names, and how many variables are needed
+// I may continue to add more to this if it gains enough interest.
+// Future improvements I could add include: Accompanying bluetooth Android app, Audio Sampling and FFT for music reactive animations, Support for color palletes, 
+// animation variable memory management improvements, unique loading techniques for different animations, and more advanced animation writing techniques.
 // Garrick Hogrebe https://www.linkedin.com/in/garrick-hogrebe-321043180/
 
 #include <FastLED.h>
